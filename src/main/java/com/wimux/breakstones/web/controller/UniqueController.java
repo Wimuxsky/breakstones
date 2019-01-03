@@ -33,4 +33,10 @@ public class UniqueController {
     public ResultVO snowflakeNext() {
         return new ResultVO(new UniqueIdVO(snowFlakeFake.nextId()));
     }
+
+    @GetMapping("test/insert")
+    public ResultVO testInsert(String bizTag) {
+        segmentService.insert(bizTag, 10, 10);
+        return new ResultVO(ResultVO.CODE_SUCCESS, "success");
+    }
 }

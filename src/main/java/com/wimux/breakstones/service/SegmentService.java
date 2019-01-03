@@ -36,5 +36,9 @@ public class SegmentService {
         return Collections.EMPTY_LIST;
     }
 
+    public void insert(String bizTag, long maxId, int step) {
+        segmentMapper.insert(bizTag, maxId, step);
+    }
+
 
 }
