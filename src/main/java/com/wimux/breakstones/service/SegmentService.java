@@ -1,11 +1,13 @@
 package com.wimux.breakstones.service;
 
+import com.wimux.breakstones.bean.UniqueSegmentBean;
 import com.wimux.breakstones.dto.SegmentDTO;
 import com.wimux.breakstones.entity.SegmentEntity;
 import com.wimux.breakstones.mapper.SegmentMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collections;
@@ -38,6 +40,11 @@ public class SegmentService {
 
     public void insert(String bizTag, long maxId, int step) {
         segmentMapper.insert(bizTag, maxId, step);
+    }
+
+    @Transactional
+    public UniqueSegmentBean nextUniqueSegment(String bizTag, int step) {
+        return null;
     }
 
 
